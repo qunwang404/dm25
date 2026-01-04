@@ -16,7 +16,8 @@ data:
   OTOSCertificate: {{ default "" .Values.global.otosCertificate | b64enc }}
   IVCertificate: {{ default "" .Values.global.ivCertificate | b64enc }}
   lsVersion: {{ default "" .Values.global.lsVersion | quote }}
-  isReportsEnabled: {{ default "" .Values.global.dtrbase.enable | quote }}
+  isReportsEnabled: {{ default "false" }}
+#  isReportsEnabled: {{ default "" .Values.global.dtrbase.enable | quote }}
 
 {{- if .Values.global.proxy.enabled }} 
 {{- if .Values.global.proxy.host }} 
