@@ -1,0 +1,5 @@
+apiVersion: v2
+appVersion: 25.4.0000.0030
+description: Archive Services for SAP Solutions Helm chart for Kubernetes
+name: dctm-assap
+version: "25.4"
