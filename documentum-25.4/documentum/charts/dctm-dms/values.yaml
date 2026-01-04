@@ -165,7 +165,7 @@ validateSignature:
 jmx:
   # JMX properties
   host: localhost
-  password:
+  password: Password1Password1@
   rmiRegistryPort:  8490
   rmiServerPort: 32324
 
