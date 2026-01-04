@@ -1,0 +1,23 @@
+name: Deploy on commit
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Deploy
+        run: |
+          cd /opt/myapp
+          git fetch --all
+          git reset --hard origin/main
+          echo "Deploy completed on $(hostname)"
+          helm upgrade dm25.4 /eks/dctm-25.4-yaml/documentum --values config/configuration.yml --values config/constants.yaml --values config/<passwords or passwords_vault or passwords_k8api>.yaml --values dockerimages-values.yaml
+
+
