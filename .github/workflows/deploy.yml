@@ -18,6 +18,6 @@ jobs:
           git fetch --all
           git reset --hard origin/main
           echo "Deploy completed on $(hostname)"
-          helm upgrade dm25.4 /eks/dctm-25.4-yaml/documentum --values config/configuration.yml --values config/constants.yaml --values config/<passwords or passwords_vault or passwords_k8api>.yaml --values dockerimages-values.yaml
+          helm upgrade dm25.4 /eks/dctm-25.4-yaml/documentum -n dm25 --values config/configuration.yml --values config/constants.yaml --values dockerimages-values.yaml
 
 
