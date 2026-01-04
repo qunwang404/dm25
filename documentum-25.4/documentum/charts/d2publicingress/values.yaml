@@ -44,7 +44,7 @@ dctmreportsd2service:
     enable: 
     path: DCTM-Reports
 dtrbaseService:
-  enable: 
+  enable: false
   serviceName: dtrbase
   servicePortCore: 5001
   servicePortServlet: 8080
