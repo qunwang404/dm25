@@ -14,12 +14,12 @@ db:
       memory: 16Gi
     requests:
       cpu: 300m
-      memory: 1Gi
+      memory: 600Mi
 docbroker:
   docbroker:
     replicaCount: *docbroker_count
   persistentVolume:
-    size: 1Gi
+    size: 600Mi
   resources:
     limits:
       cpu: 600m
@@ -34,9 +34,9 @@ content-server:
     replicaCount: 2
     docbrokersCount: *docbroker_count
   persistentVolume:
-    size: 21Gi
+    size: 2600Mi
   dbrpersistentVolume:
-    size: 1Gi
+    size: 600Mi
   resources:
     limits:
       cpu: 4000m
@@ -49,14 +49,14 @@ content-server:
 dctm-rest:
   replicaCount: 1
   custom:
-    pvcSize: 1Gi
+    pvcSize: 600Mi
   resources:
     limits:
       cpu: 500m
       memory: 2.5Gi
     requests:
       cpu: 300m
-      memory: 1Gi
+      memory: 600Mi
 dctm-cmis:
   replicaCount: 1
   cmis:    
@@ -82,11 +82,11 @@ dctm-workflow-designer:
       memory: 3Gi
     requests:
       cpu: 400m
-      memory: 1Gi
+      memory: 600Mi
 dfs:
   replicaCount: 1
   volumeClaimTemplate:
-    size: 1Gi
+    size: 600Mi
     # storage class for the volumeClaimTemplates Ex : azurefile
     logVctSize: 2Gi
   extensionPVC:
@@ -97,13 +97,13 @@ dfs:
       memory: 3Gi
     requests:
       cpu: 600m
-      memory: 1Gi
+      memory: 600Mi
 contentconnect:
   replicaCount: 1
   resources:
     limits:
       cpu: 800m
-      memory: 1Gi
+      memory: 600Mi
     requests:
       cpu: 600m
       memory: 800Mi
@@ -118,7 +118,7 @@ contentconnect:
         memory: 500Mi   
 dtrbase:
   persistentVolumeClaim:
-    size: 1Gi
+    size: 600Mi
   deployment:
     replicaCount: 1
   resources:
@@ -131,19 +131,19 @@ dtrbase:
 da:
   replicaCount: 1
   persistentVolumeClaim:
-    size: 1Gi
+    size: 600Mi
   resources:
     limits:
       cpu: 400m
       memory: 4Gi
     requests:
       cpu: 200m
-      memory: 1Gi
+      memory: 600Mi
 records:
   persistentVolumeClaim:
-    PVCsize: 1Gi
+    PVCsize: 600Mi
   persistentVolumeClaimEC:
-    PVCsize: 1Gi
+    PVCsize: 600Mi
   docbroker:
     replicaCount: *docbroker_count
   records:
@@ -154,7 +154,7 @@ records:
       memory: 8Gi
     requests:
       cpu: 200m
-      memory: 1Gi
+      memory: 600Mi
 rqm:
   containers:
     rqm:
@@ -172,7 +172,7 @@ otds:
     resources:
       requests:
         cpu: 500m
-        memory: 1Gi
+        memory: 600Mi
       limits:
         cpu: 2000m
         memory: 1.5Gi
@@ -187,14 +187,14 @@ d2classic:
     persistentVolume: 
       size: 2Gi
   persistentVolume:
-    size: 1Gi
+    size: 600Mi
   resources:
     limits:
       cpu: 1600m
       memory: 4Gi
     requests:
       cpu: 300m
-      memory: 1Gi
+      memory: 600Mi
 d2config:
   replicaCount: 1
   docbroker:
@@ -206,7 +206,7 @@ d2config:
     persistentVolume: 
       size: 2Gi
   persistentVolume:
-    size: 1Gi
+    size: 600Mi
   extension:
     PVCSize: 8Gi
   resources:
@@ -215,7 +215,7 @@ d2config:
       memory: 8Gi
     requests:
       cpu: 500m
-      memory: 1Gi
+      memory: 600Mi
 d2smartview:
   replicaCount: 2
   docbroker:
@@ -227,14 +227,14 @@ d2smartview:
     persistentVolume: 
       size: 2Gi
   persistentVolume:
-    size: 1Gi
+    size: 600Mi
   resources:
     limits:
       cpu: 2000m
       memory: 4Gi
     requests:
       cpu: 300m
-      memory: 1Gi
+      memory: 600Mi
 d2rest:
   replicaCount: 1
   docbroker:
@@ -246,14 +246,14 @@ d2rest:
     persistentVolume: 
       size: 2Gi
   persistentVolume:
-    size: 1Gi
+    size: 600Mi
   resources:
     limits:
       cpu: 400m
       memory: 4Gi
     requests:
       cpu: 200m
-      memory: 1Gi
+      memory: 600Mi
 
 adminconsole:
   replicaCount: 2
@@ -266,14 +266,14 @@ adminconsole:
     persistentVolume: 
       size: 2Gi
   persistentVolume:
-    size: 1Gi
+    size: 600Mi
   resources:
     limits:
       cpu: 2000m
       memory: 4Gi
     requests:
       cpu: 300m
-      memory: 1Gi
+      memory: 600Mi
 
 xPlore-OneD:
   cps:
@@ -321,7 +321,7 @@ xPlore-OneD:
       resources:
         requests:
           cpu: 500m
-          memory: 1Gi
+          memory: 600Mi
         limits:
           cpu: 2000m
           memory: 4Gi
@@ -339,13 +339,13 @@ smartviewm365:
      memory: 2Gi
     requests:
      cpu: 600m
-     memory: 1Gi
+     memory: 600Mi
 notificationservice:
   replicaCount: 1
   resources:
     limits:
       cpu: 800m
-      memory: 1Gi
+      memory: 600Mi
     requests:
       cpu: 700m
       memory: 800Mi
@@ -362,7 +362,7 @@ oesconnector:
       memory: 2Gi
     requests:
       cpu: 500m
-      memory: 1Gi
+      memory: 600Mi
      
 otiv:
   global:
@@ -371,7 +371,7 @@ otiv:
   amqp:
     replicas: 2
     persistence:
-      size: 1Gi    
+      size: 600Mi    
     resources:
       limits:
         cpu: 1500m
@@ -432,7 +432,7 @@ otiv:
         memory: 2Gi
       requests:
         cpu: 1000m
-        memory: 1Gi    
+        memory: 600Mi    
   viewer:
     replicas: 1  
     resources:
@@ -454,7 +454,7 @@ appworks-gateway:
 bps:
   replicaCount: 1
   volumeClaimTemplates:  
-    size: 1Gi  
+    size: 600Mi  
   bpsConfig:
     maxReplicas: 2
     minReplicas: 1
@@ -507,7 +507,7 @@ documentum-search:
     resources:
       requests:
         cpu: 500m
-        memory: 1Gi
+        memory: 600Mi
       limits:
         cpu: 2000m
         memory: 4Gi
@@ -557,7 +557,7 @@ documentum-search:
     resources:
       requests:
         cpu: 500m
-        memory: 1Gi
+        memory: 600Mi
       limits:
         cpu: 2000m
         memory: 4Gi
@@ -614,7 +614,7 @@ dctm-dcc:
         memory: 2Gi
       requests:
         cpu: 500m
-        memory: 1Gi
+        memory: 600Mi
       
   syncnshareManual:
     replicaCount: 1
@@ -624,7 +624,7 @@ dctm-dcc:
         memory: 2Gi
       requests:
         cpu: 500m
-        memory: 1Gi
+        memory: 600Mi
       
   coreNotification:
     replicaCount: 1
@@ -656,7 +656,7 @@ amq:
       cpu: 1000m
       memory: 4Gi
   persistence:
-    size: 1Gi
+    size: 600Mi
     
 ijms:
   ijms:
@@ -664,7 +664,7 @@ ijms:
   persistentVolume:
     size: 3Gi
   volumeClaimTemplate:
-    size: 1Gi
+    size: 600Mi
     logVctSize: 2Gi
   resources:
     limits:
@@ -681,7 +681,7 @@ dctm-dcis:
   resources:
     requests:
       cpu: 500m
-      memory: 1Gi
+      memory: 600Mi
     limits:
       cpu: 1000m
       memory: 2Gi
@@ -689,7 +689,7 @@ dctm-dcis:
 dctm-dms:
   replicaCount: 1
   dms:
-    pvcSize: 1Gi
+    pvcSize: 600Mi
     logs:
       pvcSize: 2Gi
   resources:
@@ -720,7 +720,7 @@ lss:
       oshaproxy: 1 
     memory:
       osprimary: 2Gi
-      oshaproxy: 1Gi
+      oshaproxy: 600Mi
     cpu:
       osprimary: 200m
       oshaproxy: 100m
@@ -731,7 +731,7 @@ lss:
       submissions: 
         size: 20Gi
       users: 
-        size: 1Gi
+        size: 600Mi
     persistLogsOnPvc:
       volumeClaimTemplate:
         logVctSize: 2Gi
@@ -741,13 +741,13 @@ lss:
         memory: 2Gi
       requests:
         cpu: 300m
-        memory: 1Gi
+        memory: 600Mi
 
 dctm-assap:
   deployment:
     replicaCount: 1
   persistentVolumeClaim:
-    size: 1Gi
+    size: 600Mi
   custom:
     size: 22Mi
   resources:
@@ -761,7 +761,7 @@ dctm-assap-ilm:
   deployment:
     replicaCount: 1
   persistentVolumeClaim:
-    size: 1Gi
+    size: 600Mi
   custom:
     size: 22Mi
   resources:
@@ -775,7 +775,7 @@ dctm-cssap:
   deployment:
     replicaCount: 1
   persistentVolumeClaim:
-    size: 1Gi
+    size: 600Mi
   custom:
     size: 22Mi
   resources:
