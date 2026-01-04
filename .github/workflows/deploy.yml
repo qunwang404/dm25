@@ -18,6 +18,8 @@ jobs:
           git fetch --all
           git reset --hard origin/main
           echo "Deploy completed on $(hostname)"
-          helm upgrade dm25.4 /eks/dctm-25.4-yaml/documentum -n dm25 --values config/configuration.yml --values config/constants.yaml --values dockerimages-values.yaml
+          export REL_PATH=/eks/git/actions-runner/_work/dm25/dm25/documentum-25.4/documentum
+          helm upgrade --install dm25.4 $REL_PATH --values $REL_PATH/config/configuration.yml --values $REL_PATH/config/constants.yaml --values $REL_PATH/dockerimages-values.yaml --values $REL_PATH/documentum-resources-values-small.yaml -n dm25  --debug
+
 
 
